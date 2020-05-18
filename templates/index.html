@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></head>
+    <body>
+        <script>
+            document.body.style.zoom = "90%";
+            console.log("Hello world!");
+        </script>
+        <div class="container">
+            <h1>Search Object</h1>
+            <form method="POST" >
+                <input type="text" name="user_search"><br>
+                <input type="submit", value="Search">
+            </form>
+            <h2>Results:</h2>
+            {% for item in items %}
+            <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                <img src="\static\{{item}}" height="200px">
+            </figure>
+            {% endfor %}
+        </div>
+    </body>
+</html>
