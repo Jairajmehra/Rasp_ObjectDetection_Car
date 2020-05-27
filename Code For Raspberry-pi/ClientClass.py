@@ -25,7 +25,7 @@ class Client(threading.Thread):
 
     def SendFrame(self):
         while(self.connected):
-            print("Sending Frame")
+            #print("Sending Frame")
             ret, frame = self.cam.read()
             result, frame = cv2.imencode('.jpg', frame, self.encode_param)
             data = pickle.dumps(frame, 0)

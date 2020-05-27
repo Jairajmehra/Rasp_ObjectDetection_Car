@@ -44,7 +44,7 @@ class Server(threading.Thread):
             cv2.imshow('Real Time video feed', frame)
             cv2.waitKey(1)
             if(frameCounter == 120):
-                print("saving Image")
+                print("saving To images Folder")
                 self.Store_Search.SaveNotDetected(frame)
                 frameCounter = 0
             

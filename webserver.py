@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
-from ImageClass import StoreSystem
+from StoreSearchClass import store_Search
 import os
 dirpath = os.getcwd()
 LocationToSearch = os.path.join(dirpath, 'static')
-storesystem = StoreSystem(LocationToSearch)
+storesystem = store_Search(LocationToSearch)
 app = Flask(__name__)
 
 @app.route("/")

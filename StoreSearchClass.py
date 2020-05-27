@@ -25,15 +25,4 @@ class store_Search:
         for x in items:
             names.append(os.path.basename(x))
         return names
-        size = len(list(items))
-        if(size!=0):
-            if(size >= 3):
-                items = sorted(items, key=os.path.getctime)[:3]
-            else:
-                items = sorted(items, key=os.path.getctime)
-            names=[]
-            for x in items:
-                names.append(os.path.basename(x))
-            return names
-        else:
-            return None
+     

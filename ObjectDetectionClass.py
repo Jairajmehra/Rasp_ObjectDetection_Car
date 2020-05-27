@@ -13,8 +13,8 @@ class ObjectDetection(threading.Thread):
         threading.Thread.__init__(self)
         self.map = {1:"bottle", 2:"speaker", 3:"scissors"}
         self.current_Path = os.getcwd()
-        self.Load_from_location = os.path.join(self.current_Path, 'images') # from location
-        self.Store_Search = store_Search(os.path.join(self.current_Path, 'static')) # to location,  store at this location
+        self.Load_from_location = os.path.join(self.current_Path, 'images') 
+        self.Store_Search = store_Search(os.path.join(self.current_Path, 'static')) 
         self.NUM_CLASSES = num_class
         self.PATH_TO_LABELS = os.path.join(self.current_Path,'labelmap.pbtxt')
         self.label_map = label_map_util.load_labelmap(self.PATH_TO_LABELS)
@@ -48,16 +48,15 @@ class ObjectDetection(threading.Thread):
             size = len(items)
             if(size > 0):
                 for x in items:
-                  #  if(self.Stop ==  False):
+
                     name = os.path.basename(x)
                     imagepath = os.path.join(self.Load_from_location, name)
                     image = cv2.imread(imagepath)
                     self.Detect(image)
                     os.remove(imagepath)
-                    # else:
-                    #     raise Exception("Quiting Object Detection")
+
             else:
-                # raise Exception("No Images left to detect")
+
                 print("no images left to detect")
                 break
 
@@ -86,5 +85,3 @@ class ObjectDetection(threading.Thread):
             print('Object Detected saving image')
             self.Store_Search.SaveDetected(frame, name) 
     
-    # def Exit(self):
-    #     self.Stop = True
