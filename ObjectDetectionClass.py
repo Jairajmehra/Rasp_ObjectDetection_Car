@@ -1,6 +1,7 @@
-#zlib struct
+
 import  cv2, os, sys
-from utils import label_map_util
+#from utils import label_map_util
+import label_map_util
 import tensorflow as tf
 import numpy as np
 from StoreSearchClass import store_Search
@@ -56,9 +57,8 @@ class ObjectDetection(threading.Thread):
                     os.remove(imagepath)
 
             else:
-
                 print("no images left to detect")
-                break
+                
 
     def Detect(self,frame):
         self.frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
