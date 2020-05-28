@@ -1,13 +1,13 @@
 
 import  cv2, os, sys
-from utils import label_map_util
+import label_map_util
 import tensorflow as tf
 import numpy as np
 from StoreSearchClass import store_Search
 from utils import visualization_utils as vis_util
 import threading
 from pathlib import Path
-
+import time
 class ObjectDetection(threading.Thread):
     def __init__(self, num_class):
         threading.Thread.__init__(self)
@@ -56,7 +56,8 @@ class ObjectDetection(threading.Thread):
                     os.remove(imagepath)
 
             else:
-                print("no images left to detect")
+                print("no images left to detect, waiting for new images")
+                time.sleep(60)
                 
 
     def Detect(self,frame):
