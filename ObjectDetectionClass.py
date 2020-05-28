@@ -1,7 +1,6 @@
 
 import  cv2, os, sys
-#from utils import label_map_util
-import label_map_util
+from utils import label_map_util
 import tensorflow as tf
 import numpy as np
 from StoreSearchClass import store_Search
