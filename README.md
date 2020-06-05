@@ -22,7 +22,7 @@ To run the program you will need:
 
 In the folder named “code for raspberry pi” contains all the code that directly runs on a raspberry pi car.
 1)	On raspberry pi run main.py which will run everything else as needed. 
-2)	On pc create a folder named “images” in the same directory as all the other files and copy all the images from ‘test images’ folder to ‘images‘ folder. 
+2)	On pc create a folder named “images” and another named "static" in the same directory as all the other files and copy all the images from ‘test images’ folder to ‘images‘ folder. 
 3)	Run main.py on pc, it will start object detection and images inside the ‘images’ folder will be saved in static folder with corresponding object name along with a unique ID. I have commented out the server lines in main.py but that can be uncommented if connecting a client.
 4)	Run webserver.py on pc. 
 
