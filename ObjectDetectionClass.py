@@ -4,7 +4,7 @@ import label_map_util
 import tensorflow as tf
 import numpy as np
 from StoreSearchClass import store_Search
-from utils import visualization_utils as vis_util
+import visualization_utils as vis_util
 import threading
 from pathlib import Path
 import time
